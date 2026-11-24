@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ước điểm UET</title>
+  <meta name="description" content="Ước lượng điểm học phần theo thang điểm UET: tự tạo đầu điểm, trọng số và số bài kiểm tra.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="sidebar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <span class="topbar-title" id="topbarTitle">Ước điểm</span>
+    </header>
+
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#/overview">
+        <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true">
+          <rect width="32" height="32" rx="7" fill="#1d5fbf"/>
+          <rect x="7" y="18" width="4" height="7" rx="1" fill="#fff" opacity=".55"/>
+          <rect x="14" y="13" width="4" height="12" rx="1" fill="#fff" opacity=".8"/>
+          <rect x="21" y="7" width="4" height="18" rx="1" fill="#fff"/>
+        </svg>
+        <span>
+          <span class="brand-name">Ước điểm</span>
+          <span class="brand-scope" id="brandScope">Học kì I · 2026–2027</span>
+        </span>
+      </a>
+
+      <nav aria-label="Điều hướng chính">
+        <a class="nav-item" href="#/overview" data-view="overview">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h7v6H4zM13 5h7v14h-7zM4 13h7v6H4z"/></svg>
+          <span class="nav-label">Tổng quan học kì</span>
+        </a>
+        <div class="nav-group" id="courseGroupLabel">Môn học</div>
+        <div id="courseNav" aria-labelledby="courseGroupLabel"></div>
+        <button class="nav-item nav-add" id="addCourse" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
+          <span class="nav-label">Thêm môn</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-foot">
+        <a class="nav-item" href="#/scale" data-view="scale">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19h16M6 19V9M10 19V5M14 19v-7M18 19v-4"/></svg>
+          <span class="nav-label">Thang điểm UET</span>
+        </a>
+        <button class="nav-item" id="resetData" type="button">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.4-5.7M4 4v4h4"/></svg>
+          <span class="nav-label">Nạp lại dữ liệu mẫu</span>
+        </button>
+      </div>
+    </aside>
+
+    <main class="canvas" id="main" tabindex="-1">
+      <noscript><p>Trang này cần JavaScript để tính điểm.</p></noscript>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+    <span id="toastText"></span>
+    <button type="button" id="toastUndo">Hoàn tác</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
